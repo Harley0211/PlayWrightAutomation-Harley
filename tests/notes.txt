@@ -20,8 +20,9 @@ aync funtion - telling the test will test in asynchronous
   if you put page beside the ({broweser}) like this ({browser, page})
   the above is not nececssary since you want it to default
 
-  
-
-
+  npx playwright test- runs the e2e tests
 
   
+
+
+
