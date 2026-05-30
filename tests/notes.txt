@@ -1,0 +1,27 @@
+aync funtion - telling the test will test in asynchronous
+
+ //playwright code
+    //step1 -open browser
+    //step2 -enter U/P
+    //step3 -click
+
+    this is not work if not async
+
+    we cakl this function () anonymous function -> aysnc ()=>
+
+        browser = global fixer
+
+        
+  const context = await browser.newContext();
+  const page = await context.newPage();
+
+  this is the default page that playwright gives you but
+
+  if you put page beside the ({broweser}) like this ({browser, page})
+  the above is not nececssary since you want it to default
+
+  
+
+
+
+  
