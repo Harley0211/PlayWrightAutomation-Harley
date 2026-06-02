@@ -11,13 +11,13 @@
 //   await page.goto("https://www.google.com/");
 // });
 
+const { test } = require("@playwright/test");
 
-const {test} = require('@playwright/test');
-
-test('browser playwright test', async ({browser, page})=>{
-  await page.goto('https//:www.fiber.t-mobile.com')
+test("browser playwright test", async ({ browser, page }) => {
+  await page.goto("https//:www.fiber.t-mobile.com");
 });
 
-test ('Page playwright test', async ({page})=>{
-  await page.goto("https//:www.google.com")
-})
+test.only("Page playwright test", async ({ page }) => {
+  await page.goto("https//:www.google.com");
+  await console.log(await page.title());
+});
