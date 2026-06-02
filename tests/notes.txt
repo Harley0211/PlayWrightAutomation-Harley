@@ -1,3 +1,5 @@
+How to run a test
+
 aync funtion - telling the test will test in asynchronous
 
  //playwright code
