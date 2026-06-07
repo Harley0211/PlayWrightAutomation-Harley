@@ -22,6 +22,18 @@ aync funtion - telling the test will test in asynchronous
 
   npx playwright test- runs the e2e tests
 
+
+if ID is present
+css > tagname#id (or) #id
+
+if class attribute is present
+css > tagname.class (or) .class
+
+write css based on any attribute
+css > parenttagname >> childtagname
+
+If needs to write the locator based on text
+text=''
   
 
 

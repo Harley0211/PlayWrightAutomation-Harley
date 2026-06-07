@@ -1,23 +1,22 @@
-// const { test } = require("@playwright/test");
+const { test, expect } = require("@playwright/test");
 
-// test("Browser Context Playwright Test", async ({ browser, page }) => {
-//   //chrome - plugins/ cookies
-//   //   const context = await browser.newContext();
-//   //   const page = await context.newPage();
-//   await page.goto("https://www.rahulshettyacademy.com/loginpagePractise/");
-// });
+test.only("Browser Context Playwright Test", async ({ browser }) => {
+  //chrome - plugins/ cookies
+  const context = await browser.newContext();
+  const page = await context.newPage();
+  await page.goto("https://www.rahulshettyacademy.com/loginpagePractise/");
 
-// test.only("Page Playwright Test", async ({ page }) => {
-//   await page.goto("https://www.google.com/");
-// });
+  console.log(page.title());
+  await page.locator("#username").type("rahulshetty");
+  await page.locator("[type = 'password']").type("learning");
+  await page.locator("[type = 'submit']").click();
 
+  console.log(await page.locator("[style*='block']").textContent());
 
-const {test} = require('@playwright/test');
-
-test('browser playwright test', async ({browser, page})=>{
-  await page.goto('https//:www.fiber.t-mobile.com')
 });
 
-test ('Page playwright test', async ({page})=>{
-  await page.goto("https//:www.google.com")
-})
+test ("Page Playwright Test", async ({ page }) => {
+  await page.goto("https://www.google.com/");
+  console.log(await page.title());
+  await expect(page).toHaveTitle("Google")
+});
