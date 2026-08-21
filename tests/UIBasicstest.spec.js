@@ -12,11 +12,16 @@ test.only("Browser Context Playwright Test", async ({ browser }) => {
   await page.locator("[type = 'submit']").click();
 
   console.log(await page.locator("[style*='block']").textContent());
-
+  await expect (page.locator("[style*='block']")).toContainText("Incorrect");
 });
+
+
+
 
 test ("Page Playwright Test", async ({ page }) => {
   await page.goto("https://www.google.com/");
   console.log(await page.title());
   await expect(page).toHaveTitle("Google")
 });
+
+
