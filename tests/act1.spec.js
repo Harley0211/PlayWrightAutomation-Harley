@@ -16,6 +16,7 @@ test("Activity 1 - Register and login to dashboard", async ({ browser }) => {
   const occupationOption = page.locator("select[formcontrolname='occupation']");
   const userpwdfield = page.locator("#userPassword");
   const userpwdconfrmfield = page.locator("#confirmPassword");
+  const chkbox = page.locator('input[type="checkbox"]');
 
   //error handling all field
   await registerBtn.click();
@@ -30,8 +31,9 @@ test("Activity 1 - Register and login to dashboard", async ({ browser }) => {
   await phonefield.fill("5555555555");
   await page.locator(".custom-select").click();
   await occupationOption.selectOption({ label: "Doctor" });
-  await userpwdfield.fill("test123");
-  await userpwdconfrmfield.fill("test123");
-  await page.getByLabel("I am 18 year or Older").check();
-  await btnregister.click();
+  await userpwdfield.fill("test@123");
+  await userpwdconfrmfield.fill("test@123");
+  await chkbox.check();
+  await expect(chkbox).toBeChecked();
+  await await btnregister.click();
 });
