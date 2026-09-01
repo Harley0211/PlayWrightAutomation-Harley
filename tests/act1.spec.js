@@ -27,13 +27,16 @@ test("Activity 1 - Register and login to dashboard", async ({ browser }) => {
   console.log(await page.locator(".login-title").textContent());
   await fnamefield.fill("myFname");
   await lnamefield.fill("myLname");
-  await emailfield.fill("test123@gmail.com");
+  await emailfield.fill("test112021002@gmail.com");
   await phonefield.fill("5555555555");
   await page.locator(".custom-select").click();
   await occupationOption.selectOption({ label: "Doctor" });
-  await userpwdfield.fill("test@123");
-  await userpwdconfrmfield.fill("test@123");
+  await userpwdfield.fill("Test@123");
+  await userpwdconfrmfield.fill("Test@123");
   await chkbox.check();
   await expect(chkbox).toBeChecked();
   await await btnregister.click();
+
+  const alertmessage = await page.getByRole("alert").textContent();
+  console.log(alertmessage);
 });
