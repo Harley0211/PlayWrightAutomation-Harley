@@ -1,6 +1,6 @@
 const { test, expect } = require("@playwright/test");
 
-test.only("Browser Context - Validating Error Login", async ({ browser }) => {
+test("Browser Context - Validating Error Login", async ({ browser }) => {
   const context = await browser.newContext();
   const page = await context.newPage();
   await page.goto("https://www.rahulshettyacademy.com/loginpagePractise/");
@@ -23,4 +23,16 @@ test.only("Browser Context - Validating Error Login", async ({ browser }) => {
   console.log(await cartTitles.nth(1).textContent());
   const allCardTitles = await cartTitles.allTextContents();
   console.log(allCardTitles);
+});
+
+test.only("UI controls", async ({ page }) => {
+  await page.goto("https://www.rahulshettyacademy.com/loginpagePractise/");
+  const userName = page.locator("#username");
+  const signIn = page.locator("#signInBtn");
+  const dropdown = page.locator("select.form-control");
+  await dropdown.selectOption("consult");
+  await page.locator(".radiotextsty").nth(1).click();
+  await page.locator("#okayBtn").click();
+
+  await page.pause();
 });
